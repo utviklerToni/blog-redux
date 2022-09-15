@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PostAuthor } from './PostAuthor';
+import { selectPostById } from './postsSlice';
 import { ReactionButtons } from './ReactionButtons';
 import { TimeAgo } from './TimeAgo';
 
@@ -10,9 +11,7 @@ const SinglePostPage = ({ match }) => {
 
    // because the state (which is in redux store) has more than one post
    // so we are using find()
-   const post = useSelector((state) =>
-      state.posts.find((post) => post.id === postId)
-   );
+   const post = useSelector((state) => selectPostById(state, postId));
 
    if (!post) {
       return (
