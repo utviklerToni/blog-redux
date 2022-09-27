@@ -8,6 +8,7 @@ import {
 
 import './App.css';
 import { Navbar } from './app/Navbar';
+// import ReceipesList from './features/receipes/reactComponent/ReceipesList';
 import AddPostForm from './features/posts/AddPostForm';
 import EditPostForm from './features/posts/EditPostForm';
 import { PostsList } from './features/posts/PostsList';
@@ -26,11 +27,13 @@ function App() {
                      <Fragment>
                         <AddPostForm />
                         <PostsList />
+                        {/* <ReceipesList /> */}
                      </Fragment>
                   )}
                />
                <Route exact path='/posts/:postId' component={SinglePostPage} />
                <Route exact path='/editPost/:postId' component={EditPostForm} />
+
                <Redirect to='/' />
             </Switch>
          </div>
